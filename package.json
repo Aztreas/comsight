@@ -1,0 +1,21 @@
+{
+  "name": "comsight",
+  "version": "1.0.0",
+  "description": "a tool used to gauge the public sentiment surrounding a company on Twitter",
+  "main": "comsight",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "comsight"
+  },
+  "keywords": [
+    "finance",
+    "technology",
+    "sentiment",
+    "analysis"
+  ],
+  "author": "Eric Li",
+  "license": "ISC"
+}
