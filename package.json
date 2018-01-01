@@ -4,11 +4,12 @@
   "description": "a tool used to gauge the public sentiment surrounding a company on Twitter",
   "main": "comsight",
   "scripts": {
+    "start": "node bot.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
-    "url": "comsight"
+    "url": "https://github.com/Aztreas/comsight"
   },
   "keywords": [
     "finance",
@@ -17,5 +18,9 @@
     "analysis"
   ],
   "author": "Eric Li",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "smalltalk": "^2.5.1",
+    "twit": "^2.2.9"
+  }
 }
