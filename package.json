@@ -20,6 +20,7 @@
   "author": "Eric Li",
   "license": "ISC",
   "dependencies": {
+    "jsonfile": "^4.0.0",
     "smalltalk": "^2.5.1",
     "twit": "^2.2.9"
   }
