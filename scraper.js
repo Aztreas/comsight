@@ -1,5 +1,5 @@
-console.log(`yeet`)
 
+var jsonfile = require('jsonfile')
 var Twit = require('twit'); //import statement
 
 //optional: var config = require('./config');
@@ -21,15 +21,16 @@ const rl = readline.createInterface({
   output: process.stdout
 });
 
-rl.question('What do you think of Node.js? ', (answer) => {
+rl.question('What company would you like to analyze? ', (answer) => {
   // TODO: Log the answer in a database
 
   var companyName = answer
   console.log(companyName)
 
+  var texts = ``
   var parameters = {
-    q: 'banana since:2016-07-11',
-    count: 10
+    q: `${answer} since:2016-07-11`,
+    count: 100
   };
 
   T.get('search/tweets', parameters, callBack);
@@ -37,10 +38,23 @@ rl.question('What do you think of Node.js? ', (answer) => {
   function callBack(err, data, response) {
     var tweets = data.statuses;
     for (var i = 0; i < tweets.length; i++){
-      console.log(tweets[i].text);
-    }
+      texts = texts + `    ` + `${tweets[i].text}`;
+    };
+
+    var file = '/Users/Aztreas/Eric_side_projects/comsight/data.json';
+    var obj = texts;
+
+    jsonfile.writeFile(file, obj, function (err) {
+      console.error(err)
+    });
 };
 
-  console.log(`Thank you for your valuable feedback: ${answer}`);
+  console.log(
+    `Thank you for using comsight. To interpret your data, please enter the following into your terminal with your IBM Cloud credentials:
+
+    curl -X POST --user "{username}":"{password}" \
+--header "Content-Type: application/json" \
+--data-binary @{path_to_file}tone.json \
+"https://gateway.watsonplatform.net/tone-analyzer/api/v3/tone?version=2017-09-21"`);
   rl.close();
 });
