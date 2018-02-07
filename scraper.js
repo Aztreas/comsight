@@ -6,10 +6,10 @@ var Twit = require('twit'); //import statement
 // Var T = new Twit(config);
 // way to store keys and tokens in a seperate config file for privacy
 var T = new Twit({
-  consumer_key:         '97u1KkUciqd6cl2V6gQZP9U3z',
-  consumer_secret:      'zUUFdpa27lr51Kc8qrieU2aH7t2mVfqgIQF4Fw9e2IxqtEjikh',
-  access_token:         '2480891532-9bn2YMeXFSPgNSdFF1jJGOxbaObWmpew9dhYfSc',
-  access_token_secret:  'WTmxQOq6WiLkmF6dKy43BvXRMjCn4ZqOf46kes4tEhp2m',
+  consumer_key:         'your key',
+  consumer_secret:      'your key',
+  access_token:         'your key',
+  access_token_secret:  'your key',
   timeout_ms:           60*1000,  // optional HTTP request timeout to apply to all requests.
   // remember to take out the keys and tokens, place your own
 });
